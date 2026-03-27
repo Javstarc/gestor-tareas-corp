@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      
+      <div class="card shadow">
+        <div class="card-header bg-dark text-white">
+          <h2 class="mb-0">Gestor de Tareas Corporativo</h2>
+        </div>
+        
+        <div class="card-body text-center p-5">
+          <h4 class="text-muted mb-4">Estado de la conexión con el Backend:</h4>
+          
+          <div class="alert" 
+               [ngClass]="{
+                 'alert-warning': estado() === 'esperando', 
+                 'alert-success': estado() === 'exito', 
+                 'alert-danger': estado() === 'error'
+               }" 
+               role="alert">
+            {{ mensajeBackend() }}
+          </div>
+          
+          <button class="btn btn-primary mt-3" (click)="probarConexion()">Probar Conexión</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
